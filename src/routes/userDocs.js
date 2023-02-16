@@ -1,6 +1,6 @@
 import express from "express";
-import authMildware from "../middlewares/auth";
-import UserDocs from "../models/userDocs";
+import UserDocs from "../models/userDocs.js";
+import authMildware from "../middlewares/auth.js";
 
 
 const docsRouter=express.Router()

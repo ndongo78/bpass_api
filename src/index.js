@@ -21,6 +21,14 @@ app.use('/api/users',userRouter)
  app.use('/api/docs',docsRouter)
 // app.use('/api/messages',messageRouter)
 
+// const generateEncryptionKey = () => {
+//     return crypto.randomBytes(32).toString('hex');
+//   };
+  
+//   // Exemple d'utilisation
+//   const encryptionKey = generateEncryptionKey();
+//   console.log('encrip',encryptionKey);
+
 
 app.listen(PORT,()=>{
     dbConfig();

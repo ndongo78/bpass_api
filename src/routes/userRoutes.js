@@ -5,6 +5,7 @@ import bcryt from "bcrypt"
 import User from "../models/users.js";
 import authMildware from "../middlewares/auth.js";
 
+
 const userRouter=express.Router()
 
 //register

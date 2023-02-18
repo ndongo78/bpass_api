@@ -51,16 +51,13 @@ const users=new Schema({
         type:Boolean,
         default: false
     },
-    code:{ 
+    codeSecret:{ 
         type:String,
-        validate:{
-            validator:(value) =>{
-            if(!value){
-                message: (props)=>`${props.value} ne peut pas etre null `
-                }
-            },
-        },
         minlength: 4,
+    },
+    counterLog:{
+        type: String,
+        default: 3
     }
 
 },

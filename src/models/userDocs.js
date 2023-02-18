@@ -7,13 +7,20 @@ const userDocs=new Schema({
         type:mongoose.SchemaTypes.ObjectId,
         ref:"User",
     },
-    receiverId:{
+    titre:{
+       type: String,
+       required:true
+    },
+    email:{
         type: String,
        required:true
     },
     password:{
         type:String,
         required:true
+    },
+    icon:{
+        type:String,
     },
     createdAt:{
         type:Date,

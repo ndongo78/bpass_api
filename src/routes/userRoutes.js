@@ -10,15 +10,18 @@ const userRouter=express.Router()
 
 //register
 userRouter.post("/",async(req,res)=>{
-    try {
-         req.body.password = await bcryt.hash(req.body.password,10)
-       const user= new User(req.body); 
-       await user.save();
-       return res.status(200).json(user)
-    
-   } catch (error) {
-    return res.status(500).json(error)
-   }
+    req.body.password = await bcryt.hash(req.body.password,10)
+    await User.create(req.body,function(error,result){
+        if (error){
+            if(error.code === 11000){
+                return res.status(500).json("L'address email exist déja")
+            }
+            return res.status(500).json(error)
+        }else{
+            console.log(result)
+            return res.status(201).json(result)
+        }
+    })
 })
 
 //login

@@ -6,6 +6,7 @@ import cors from 'cors';
 import dbConfig from "./config/index.js";
 import userRouter from "./routes/userRoutes.js";
 import docsRouter from "./routes/userDocs.js";
+import iconRouter from './routes/iconRoutes.js';
 
 
 
@@ -19,6 +20,7 @@ app.get('/',(req,res)=>{
 
 app.use('/api/users',userRouter)
  app.use('/api/docs',docsRouter)
+ app.use('/api/icons',iconRouter) 
 // app.use('/api/messages',messageRouter)
 
 // const generateEncryptionKey = () => {

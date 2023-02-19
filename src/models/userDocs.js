@@ -21,6 +21,7 @@ const userDocs=new Schema({
     },
     icon:{
         type:String,
+        default:null,
     },
     createdAt:{
         type:Date,

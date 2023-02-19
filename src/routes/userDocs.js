@@ -7,6 +7,7 @@ const docsRouter = express.Router()
 
 //get user docs
 docsRouter.get('/', authMildware, async (req, res) => {
+   
     try {
         const docs = await UserDocs.find({ userId: req.user.user._id })
         return res.json(docs)

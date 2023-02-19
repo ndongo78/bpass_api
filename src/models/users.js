@@ -25,15 +25,9 @@ const users=new Schema({
     },
     email:{
         type:String,
-        required:true,
-        unique:true,
-        validate:{
-            validator:(value) =>{
-            if(!value){
-                message: (props)=>`${props.value} ne peut pas etre null `
-                }
-            }
-        }
+        required: true,
+        unique: true,
+        match: /^\S+@\S+\.\S+$/
     },
     password:{ 
         type:String,
@@ -53,11 +47,11 @@ const users=new Schema({
     },
     codeSecret:{ 
         type:String,
-        minlength: 4,
+        default: 0,
     },
     counterLog:{
         type: String,
-        default: 3
+        default: 3,
     }
 
 },

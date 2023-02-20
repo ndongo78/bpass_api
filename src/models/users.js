@@ -52,7 +52,12 @@ const users=new Schema({
     counterLog:{
         type: String,
         default: 3,
-    }
+    },
+    numTriesCode: { type: Number, default: 0 },
+    locked:{
+      type:Boolean,
+      default: false
+  }
 
 },
 {timestamps:true}

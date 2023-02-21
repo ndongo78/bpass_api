@@ -30,6 +30,7 @@ docsRouter.post('/', authMildware, async (req, res) => {
 
 //update docs
 docsRouter.put('/:id', authMildware, async (req, res) => {
+
     try {
         const docs = await UserDocs.findByIdAndUpdate(req.params.id, { $set: req.body })
         return res.status(200).json(docs)

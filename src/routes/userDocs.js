@@ -7,7 +7,7 @@ const docsRouter = express.Router()
 
 //get user docs
 docsRouter.get('/', authMildware, async (req, res) => {
-   
+    
     try {
         const docs = await UserDocs.find({ userId: req.user.user._id })
         return res.json(docs)
@@ -19,6 +19,7 @@ docsRouter.get('/', authMildware, async (req, res) => {
 
 //create docs
 docsRouter.post('/', authMildware, async (req, res) => {
+    //console.log("first",req.body)
     try {
         const docs = new UserDocs(req.body);
         await docs.save();

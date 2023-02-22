@@ -11,6 +11,10 @@ const userDocs=new Schema({
        type: String,
        required:true
     },
+    lien:{
+        type: String,
+        default:null,
+     },
     email:{
         type: String,
        required:true

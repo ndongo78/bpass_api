@@ -4,10 +4,10 @@ const PORT= process.env.PORT || 5000
 import express from "express"; 
 import cors from 'cors'; 
 import bodyParser from 'body-parser';
-import dbConfig from "./config/index.js";
-import userRouter from "./routes/userRoutes.js";
-import docsRouter from "./routes/userDocs.js";
-import iconRouter from './routes/iconRoutes.js';
+import dbConfig from "./src/config/index.js";
+import userRouter from "./src/routes/userRoutes.js";
+import docsRouter from "./src/routes/userDocs.js";
+import iconRouter from './src/routes/iconRoutes.js';
 
 
 
